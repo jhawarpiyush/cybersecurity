@@ -1,0 +1,9 @@
+if regular user
+sudo hping3 --scan 0-500 -S <ip> or <hostname>
+if root user
+hping3 --scan 0-500 -S <ip> or <hostname>
+
+sudo hping3 --scan 0-500 -X <ip> or <hostname>
+
+
+hping3 --flood -S -V --rand-source <ip> or <hostname> -p 80
