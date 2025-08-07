@@ -1,0 +1,52 @@
+ping scan
+nmap -sn <ip>
+nmap -sn <ip>/24
+nmap -sn <ip> -n | grep "Nmap scan"
+nmap -sn <ip> -n | grep "Nmap scan" | cut -d" " -f5
+nmap -sS <ip>/24 --top-ports 50
+nmap -sS <ip> -p22,80,100-200
+nmap -sS -sU <ip>
+nmap -sS -sU <ip> -pT:80,443,U:53
+nmap -sS -sU <ip> -F
+nmap -sS -sU <ip> -p- or nmap -sS -sU <ip> -p1-65535
+nmap -sS --top-ports 10 -open <ip> -Pn -n
+nmap -n -Pn -sS --top-ports 3 <ip>-254
+nmap -n -Pn -sS --top-ports 3 1.1.1.100-140,206,220-230
+nmap -n -Pn -sS --top-ports 3 -iL ipList.txt
+
+TCP Scan 
+nmap -sT -n -Pn <ip> --top-ports 10
+
+UDP scan 
+nmap -sU -p161 <ip>
+nmap -n  -Pn -sU <ip>-F -sV --reason
+
+Service detection 
+nmap -n -Pn -sS <ip> --top-ports 10 -sV
+
+netstat -tnlp
+
+service ssh status
+OS scan
+nmap -n -sS <ip> --top-ports 100 -O
+nmap -n -sS <ip> --top-ports 100 -O -osscan-guess
+
+nmap -n -Pn -sS <ip> --top-ports 5 -oX resX.xml
+nmap -n -Pn -sS <ip> --top-ports 5 -oA resAll
+
+
+nmap -sS -n -Pn 10.171.17.166 -p22 -sC
+nmap -sS -n -Pn 10.171.17.166 -p22 -sC -vvv
+
+Nmap Aggressive Scan with -A Parameter
+Beyond the parameters mentioned, Nmap has a very useful parameter: -A.
+
+This option enables additional advanced and aggressive options. Presently this enables
+
+OS detection (-O),
+
+Version scanning (-sV),
+
+Script scanning (-sC) and
+
+Traceroute.
