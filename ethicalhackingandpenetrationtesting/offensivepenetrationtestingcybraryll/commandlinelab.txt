@@ -1,0 +1,21 @@
+cat /etc/passwd
+ps aux
+crontab -e
+crontab -l
+ls -la
+history
+
+#Windows cmd
+net users
+net users <user>
+tasklist
+tasklist /SVC
+tasklist /SVC | findstr ""
+#Windows powershell
+Get-Service | findstr ""
+dir /a
+type <filename>
+dir /s ""
+
+nmap -sV -sC -vvv <ip>
+nmap -sV -sC -vvv <ip> --script=vuln
